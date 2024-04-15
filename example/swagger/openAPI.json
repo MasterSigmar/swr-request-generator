@@ -1,96 +1,2347 @@
 {
-  "openapi": "3.0.0",
+  "openapi": "3.0.1",
   "info": {
-    "description": "Another Api Documentation",
-    "version": "1.0.0-oas3",
-    "title": "Another Api Documentation",
-    "termsOfService": "urn:tos",
-    "contact": {},
-    "license": {
-      "name": "Apache 2.0",
-      "url": "https://www.apache.org/licenses/LICENSE-2.0"
-    }
+    "title": "Mtq.Sit.Quebec511.Web",
+    "version": "v1"
   },
-  "tags": [
+  "servers": [
     {
-      "name": "attachment-controller",
-      "description": "Test Controller"
-    },
-    {
-      "name": "attachment-controller-2",
-      "description": "Test Controller 2"
+      "url": "http://localhost/Mtq.Sit.Quebec511.Web"
     }
   ],
   "paths": {
-    "/": {
-      "post": {
-        "operationId": "anotherUserProfileInformation",
-        "tags": ["another-mock-controller"],
-        "summary": "anotherUploadAttachment",
+    "/{language}/api/v2/mobileDetail/CamionnageInterdiction/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_CamionnageInterdiction",
         "parameters": [
           {
-            "name": "AnotherAuthorities",
-            "in": "header",
+            "name": "id",
+            "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "default": "another_officer"
+              "type": "integer",
+              "format": "int32"
             }
           },
           {
-            "name": "Another-User-Id",
-            "in": "header",
+            "name": "language",
+            "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "default": "another_abc123456789"
-            }
-          },
-          {
-            "name": "Another-User-Name",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "default": "Another John Hopkins"
+              "type": "string"
             }
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created",
+          "200": {
+            "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AnotherAttachmentBO"
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
                 }
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
           }
-        },
-        "deprecated": false,
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "attachment": {
-                    "description": "attachment",
-                    "type": "string",
-                    "format": "binary"
-                  }
-                },
-                "required": ["attachment"]
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/CamionnageLimiteLegale/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_CamionnageLimiteLegale",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/CamionnageLimitePoids/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_CamionnageLimitePoids",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/CamionnagePontBarre/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_CamionnagePontBarre",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/EvenementStandard/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_EvenementStandard",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/ChantierMajeur/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_ChantierMajeur",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/ChantierMineur/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_ChantierMineur",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/ChantierMunicipal/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_ChantierMunicipal",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/DetailAvertissement/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_DetailAvertissement",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/Conditions/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_Conditions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/LibelleDataQc511": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_LibelleDataQc511",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[LibelleData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[LibelleData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[LibelleData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/AireVerificationFrein/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_AireVerificationFrein",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[AireVerificationFreinData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[AireVerificationFreinData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[AireVerificationFreinData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/Autre511/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_Autre511",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Autre511Data]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Autre511Data]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Autre511Data]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/Camera/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_Camera",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[CameraData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[CameraData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[CameraData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/GareMontreal/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_GareMontreal",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/Halte/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_Halte",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/LitArret/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_LitArret",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/Messages/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_Messages",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/PointPeage/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_PointPeage",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/PontFederal/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_PontFederal",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[PontFederalData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[PontFederalData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[PontFederalData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/PosteFrontalier/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_PosteFrontalier",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/RouteBlanche/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_RouteBlanche",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/StationMeteo/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_StationMeteo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/Stationnement/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_Stationnement",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/Traversier/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_Traversier",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/Village/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_Village",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/ZoneDegel": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_ZoneDegel",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/RadarPhoto_Feux/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_RadarPhoto_Feux",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/RadarPhoto_FeuxFixe/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_RadarPhoto_FeuxFixe",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/RadarPhoto_Fixe/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_RadarPhoto_Fixe",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v2/mobileDetail/RadarPhoto_Mobile/{id}": {
+      "get": {
+        "tags": ["MobileDetailV2Api"],
+        "operationId": "MobileDetailV2Api_RadarPhoto_Mobile",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[BaseData]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/CameraUrls/{id}": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_CameraUrls",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[FavoritesCameras]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[FavoritesCameras]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[FavoritesCameras]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Carte": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Carte",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[InfoCarte]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[InfoCarte]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[InfoCarte]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/ConditionsRoutieres": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_ConditionsRoutieres",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[ConditionRoutiereMobile]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[ConditionRoutiereMobile]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[ConditionRoutiereMobile]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Copyright": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Copyright",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/CouleursChaussee": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_CouleursChaussee",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[CouleurLigne]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[CouleurLigne]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[CouleurLigne]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/CurrentAd": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_CurrentAd",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[MobileAd]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[MobileAd]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[MobileAd]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/DetailAvertissementsEnVigueur": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_DetailAvertissementsEnVigueur",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IDictionary[String,IList[KeyValuePair[Int32,String]]]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IDictionary[String,IList[KeyValuePair[Int32,String]]]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IDictionary[String,IList[KeyValuePair[Int32,String]]]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Evenements": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Evenements",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IDictionary[String,IList[EvenementMobile]]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IDictionary[String,IList[EvenementMobile]]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IDictionary[String,IList[EvenementMobile]]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Faq": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Faq",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Legend": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Legend",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Lignes": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Lignes",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Ligne]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Ligne]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Ligne]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/MessagesMobiles": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_MessagesMobiles",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Message]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Message]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Message]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Municipalites": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Municipalites",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Destination]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Destination]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Destination]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Pictos": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Pictos",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Picto]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Picto]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Picto]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Privacy": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Privacy",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/RefreshablePictos": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_RefreshablePictos",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Picto]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Picto]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Picto]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Regions": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Regions",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Destination]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Destination]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Destination]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/RegionsRoutes": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_RegionsRoutes",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[NotificationsRegion]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[NotificationsRegion]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[NotificationsRegion]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/StaticPictos": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_StaticPictos",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Picto]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Picto]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[Picto]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/TermeGeneral": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_TermeGeneral",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/Themes": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_Themes",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[BoutonTheme]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[BoutonTheme]]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[IEnumerable[BoutonTheme]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v4/mobile/UserGuide": {
+      "get": {
+        "tags": ["MobileV1Api"],
+        "operationId": "MobileV1Api_UserGuide",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[Url]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{language}/api/v1/mobileVersion/AppConfig": {
+      "get": {
+        "tags": ["MobileVersionV1Api"],
+        "operationId": "MobileVersionV1Api_AppConfig",
+        "parameters": [
+          {
+            "name": "version",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "os",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[AppConfig]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[AppConfig]"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse[AppConfig]"
+                }
               }
             }
           }
@@ -98,38 +2349,1061 @@
       }
     }
   },
-  "servers": [
-    {
-      "url": "//0.0.0.0:8080/api/another-test"
-    }
-  ],
   "components": {
     "schemas": {
-      "AnotherAttachmentBO": {
+      "ApiResponse[BaseData]": {
         "type": "object",
         "properties": {
-          "authorName": {
+          "data": {
+            "$ref": "#/components/schemas/BaseData"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "BaseData": {
+        "type": "object",
+        "properties": {
+          "Titre": {
             "type": "string"
           },
-          "createdDate": {
+          "ImageUrl": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Ecusson": {
+            "$ref": "#/components/schemas/EcussonData"
+          },
+          "Latitude": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Longitude": {
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "ApiMessage": {
+        "type": "object",
+        "properties": {
+          "error": {
             "type": "integer",
-            "format": "int64"
+            "format": "int32",
+            "enum": [1, 2, 400, 404, 500]
           },
-          "fileName": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "mimeType": {
-            "type": "string"
-          },
-          "path": {
+          "message": {
             "type": "string"
           }
-        },
-        "title": "AttachmentBO"
+        }
+      },
+      "EcussonData": {
+        "type": "object",
+        "properties": {
+          "Background": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Label": {
+            "type": "string",
+            "readOnly": true
+          },
+          "IconUrl": {
+            "type": "string",
+            "readOnly": true
+          },
+          "SubIconUrl": {
+            "type": "string",
+            "readOnly": true
+          },
+          "ImageSize": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "FontSize": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        }
+      },
+      "ApiResponse[LibelleData]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/LibelleData"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "LibelleData": {
+        "type": "object",
+        "properties": {
+          "LibelleRoute": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleObstacle": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleMunicipalite": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleStructure": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleLimiteDeCharge": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleEntrave": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleDirection": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleLocalisation": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleConsequences": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleDuree": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleDetour": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleCause": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleEnVigueurDepuis": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleInformation": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleDescription": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleDe": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleA": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleDepartConvoi": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleServiceTraversier": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleDebut": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleFin": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleMiseAJour": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleRadarPhotoDisponible": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleTransportCollectif": {
+            "type": "string",
+            "readOnly": true
+          },
+          "MiseAJourConditionsRoutieres": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleVisibilite": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleChaussee": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleLigneDeTrain": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleAlloTram": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleStationnements": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleDebarcadere": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleSupportVelos": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleStatut": {
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "ApiResponse[AireVerificationFreinData]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AireVerificationFreinData"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "AireVerificationFreinData": {
+        "type": "object",
+        "properties": {
+          "Route": {
+            "type": "string"
+          },
+          "Municipalite": {
+            "type": "string"
+          },
+          "Titre": {
+            "type": "string"
+          },
+          "ImageUrl": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Ecusson": {
+            "$ref": "#/components/schemas/EcussonData"
+          },
+          "Latitude": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Longitude": {
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "ApiResponse[Autre511Data]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Autre511Data"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "Autre511Data": {
+        "type": "object",
+        "properties": {
+          "NumRegion": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Url": {
+            "type": "string",
+            "readOnly": true
+          },
+          "LibelleUrl": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Titre": {
+            "type": "string"
+          },
+          "ImageUrl": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Ecusson": {
+            "$ref": "#/components/schemas/EcussonData"
+          },
+          "Latitude": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Longitude": {
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "ApiResponse[CameraData]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CameraData"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "CameraData": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "SourceMiniature": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "IsVideo": {
+            "type": "boolean"
+          },
+          "Nom": {
+            "type": "string",
+            "readOnly": true
+          },
+          "MsgDirection": {
+            "type": "string",
+            "readOnly": true
+          },
+          "SourceImage": {
+            "type": "string"
+          },
+          "SourceVideo": {
+            "type": "string"
+          },
+          "Titre": {
+            "type": "string"
+          },
+          "ImageUrl": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Ecusson": {
+            "$ref": "#/components/schemas/EcussonData"
+          },
+          "Latitude": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Longitude": {
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "ApiResponse[PontFederalData]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PontFederalData"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "PontFederalData": {
+        "type": "object",
+        "properties": {
+          "Nom": {
+            "type": "string"
+          },
+          "InfoPont": {
+            "$ref": "#/components/schemas/UriData"
+          },
+          "Titre": {
+            "type": "string"
+          },
+          "ImageUrl": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Ecusson": {
+            "$ref": "#/components/schemas/EcussonData"
+          },
+          "Latitude": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Longitude": {
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "UriData": {
+        "type": "object",
+        "properties": {
+          "Item": {
+            "type": "string"
+          },
+          "UrlLinkImage": {
+            "type": "string"
+          },
+          "UriDictionnary": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "Text": {
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "ApiResponse[FavoritesCameras]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/FavoritesCameras"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "FavoritesCameras": {
+        "type": "object",
+        "properties": {
+          "CameraImageUrl": {
+            "type": "string"
+          },
+          "CameraUrl": {
+            "type": "string"
+          },
+          "DetailUrl": {
+            "type": "string"
+          },
+          "Id": {
+            "type": "string"
+          },
+          "IsLoaded": {
+            "type": "boolean"
+          },
+          "IsVideo": {
+            "type": "boolean"
+          },
+          "Location": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiResponse[InfoCarte]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/InfoCarte"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "InfoCarte": {
+        "type": "object",
+        "properties": {
+          "TypePictos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TypePicto"
+            }
+          }
+        }
+      },
+      "TypePicto": {
+        "type": "object",
+        "properties": {
+          "IsRefreshable": {
+            "type": "boolean"
+          },
+          "Categorie": {
+            "type": "string"
+          },
+          "TypePicto": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiResponse[IEnumerable[ConditionRoutiereMobile]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConditionRoutiereMobile"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "ConditionRoutiereMobile": {
+        "type": "object",
+        "properties": {
+          "PointVisibilite": {
+            "type": "string"
+          },
+          "VisibilityColor": {
+            "$ref": "#/components/schemas/CouleurMobile"
+          }
+        }
+      },
+      "CouleurMobile": {
+        "type": "object",
+        "properties": {
+          "A": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "B": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "G": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "L": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "R": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ApiResponse[Url]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Url"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "Url": {
+        "type": "object",
+        "properties": {
+          "UrlServer": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiResponse[IEnumerable[CouleurLigne]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CouleurLigne"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "CouleurLigne": {
+        "type": "object",
+        "properties": {
+          "Categorie": {
+            "type": "string"
+          },
+          "CouleurChaussee": {
+            "$ref": "#/components/schemas/CouleurMobile"
+          },
+          "Id": {
+            "type": "string"
+          },
+          "ZIndex": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ApiResponse[MobileAd]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/MobileAd"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "MobileAd": {
+        "type": "object",
+        "properties": {
+          "Duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RedirectUrl": {
+            "type": "string"
+          },
+          "Url": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiResponse[IDictionary[String,IList[KeyValuePair[Int32,String]]]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/KeyValuePair[Int32,String]"
+              }
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "KeyValuePair[Int32,String]": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiResponse[IDictionary[String,IList[EvenementMobile]]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/EvenementMobile"
+              }
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "EvenementMobile": {
+        "type": "object",
+        "properties": {
+          "IsVisible": {
+            "type": "boolean"
+          },
+          "Lignes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ligne"
+            }
+          },
+          "Pictos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Picto"
+            }
+          }
+        }
+      },
+      "Ligne": {
+        "type": "object",
+        "properties": {
+          "Categorie": {
+            "type": "string"
+          },
+          "CouleurChaussee": {
+            "$ref": "#/components/schemas/CouleurMobile"
+          },
+          "Id": {
+            "type": "string"
+          },
+          "IsHorsSaison": {
+            "type": "boolean"
+          },
+          "Points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Point"
+            }
+          },
+          "StrokeWidth": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ZIndex": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Picto": {
+        "type": "object",
+        "properties": {
+          "Z": {
+            "type": "string"
+          },
+          "A": {
+            "type": "string"
+          },
+          "C": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "B": {
+            "type": "string"
+          }
+        }
+      },
+      "Point": {
+        "type": "object",
+        "properties": {
+          "A": {
+            "type": "number",
+            "format": "double"
+          },
+          "B": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "ApiResponse[IEnumerable[Ligne]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ligne"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "ApiResponse[IEnumerable[Message]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "Message": {
+        "type": "object",
+        "properties": {
+          "Date": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "DateAffichee": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Description": {
+            "type": "string",
+            "readOnly": true
+          },
+          "Id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "Unread": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ApiResponse[IEnumerable[Destination]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Destination"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "Destination": {
+        "type": "object",
+        "properties": {
+          "Lat": {
+            "type": "number",
+            "format": "double"
+          },
+          "Long": {
+            "type": "number",
+            "format": "double"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Zoom": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "ApiResponse[IEnumerable[Picto]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Picto"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "ApiResponse[IEnumerable[NotificationsRegion]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificationsRegion"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "NotificationsRegion": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Nom": {
+            "type": "string"
+          },
+          "Routes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificationsRoute"
+            }
+          }
+        }
+      },
+      "NotificationsRoute": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "IsNotificationsEnabled": {
+            "type": "boolean"
+          },
+          "Type": {
+            "type": "string"
+          }
+        }
+      },
+      "IRegionsAccordionViewModel": {
+        "type": "object",
+        "properties": {
+          "IsAllToggled": {
+            "type": "boolean"
+          },
+          "Region": {
+            "$ref": "#/components/schemas/NotificationsRegion"
+          },
+          "RightImage": {
+            "type": "string"
+          },
+          "Routes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificationsRoute"
+            }
+          }
+        }
+      },
+      "ApiResponse[IEnumerable[BoutonTheme]]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BoutonTheme"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "BoutonTheme": {
+        "type": "object",
+        "properties": {
+          "Active": {
+            "type": "boolean"
+          },
+          "ImageUrl": {
+            "type": "string"
+          },
+          "Libelle": {
+            "type": "string"
+          },
+          "Theme": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiResponse[AppConfig]": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AppConfig"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMessage"
+            }
+          }
+        }
+      },
+      "AppConfig": {
+        "type": "object",
+        "properties": {
+          "CurrentVersion": {
+            "type": "string"
+          },
+          "UpdateAvailable": {
+            "type": "boolean"
+          },
+          "Mandatory": {
+            "type": "boolean"
+          },
+          "EmptyCache": {
+            "type": "string"
+          }
+        }
       }
     }
-  }
+  },
+  "x-original-swagger-version": "2.0"
 }
