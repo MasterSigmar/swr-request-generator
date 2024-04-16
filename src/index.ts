@@ -14,20 +14,22 @@ import { useMutationRequest } from "./template/useMutationRequest.js";
 import { client } from "./template/client.js";
 import { greenConsole, redConsole } from "./utils/console.js";
 
+program.option(
+  "-w, --windows",
+  "tell the program to resolve paths using Windows filesystem:\nprefixes filepath with file:// and replaces backslashes(\\) with forward slashes (/)",
+);
 program.option("-a, --authorization <value>", "authorization header value").parse(process.argv);
 
 const codegenConfigPath = path.resolve("ts-codegen.config.json");
 
-const getWindowsPath = (resolvedPath: string) => {
-  console.log(`resolvedPath: ${resolvedPath}`);
-  const windowsPath = `file://${resolvedPath}`.replace(/\\/g, "/");
-  console.log(`windowsPath: ${windowsPath}`);
-  return windowsPath;
+const importConfig = (resolvedPath: string) => {
+  if (program.opts().windows) resolvedPath = `file://${resolvedPath}`.replace(/\\/g, "/");
+  return import(resolvedPath, { assert: { type: "json" } });
 };
 
 const getCodegenConfig = async (): Promise<CodegenConfig> =>
   fs.existsSync(codegenConfigPath)
-    ? await import(getWindowsPath(codegenConfigPath), { assert: { type: "json" } }).then((module) => module.default)
+    ? await importConfig(codegenConfigPath)?.then((module) => module.default)
     : {
         output: ".output",
         fileHeaders: [],
