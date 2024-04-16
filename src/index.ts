@@ -18,11 +18,16 @@ program.option("-a, --authorization <value>", "authorization header value").pars
 
 const codegenConfigPath = path.resolve("ts-codegen.config.json");
 
+const getWindowsPath = (resolvedPath: string) => {
+  console.log(`resolvedPath: ${resolvedPath}`);
+  const windowsPath = `file://${resolvedPath}`.replace(/\\/g, "/");
+  console.log(`windowsPath: ${windowsPath}`);
+  return windowsPath;
+};
+
 const getCodegenConfig = async (): Promise<CodegenConfig> =>
   fs.existsSync(codegenConfigPath)
-    ? await import(`file://${codegenConfigPath}`.replace(/\\/g, "/"), { assert: { type: "json" } }).then(
-        (module) => module.default,
-      )
+    ? await import(getWindowsPath(codegenConfigPath), { assert: { type: "json" } }).then((module) => module.default)
     : {
         output: ".output",
         fileHeaders: [],
