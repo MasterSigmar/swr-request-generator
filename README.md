@@ -39,6 +39,7 @@ If many requirements in the future for a `fetch` version, maybe I can extend it 
 And if anyone want to make it happen, it should be super cool 🥳
 
 ## 🧰 How to Use
+
 ### 🛠 Install
 
 ```bash
@@ -58,6 +59,7 @@ npm install -D @openapi-integration/swr-request-generator
 ```
 
 ### 🔧 Configuration
+
 #### ☄️ Script
 
 add a npm script to your package.json file:
@@ -94,13 +96,14 @@ create a new json file named `ts-codegen.config.json` in your project root direc
 ```
 
 fields meaning:
- - output(string): output file dir
- - fileName(string): output filename
- - fileHeaders(string[]): strings in this array will be placed in output file beginning
- - clients(string[]): your swagger urls
- - data(string[]): your local swagger json/yaml file path
- - needRequestHook(boolean): if need to generate default request hook(useGetRequest and useMutationRequest)
- - needClient(boolean): if need to generate default request axios client
+
+- output(string): output file dir
+- fileName(string): output filename
+- fileHeaders(string[]): strings in this array will be placed in output file beginning
+- clients(string[]): your swagger urls
+- data(string[]): your local swagger json/yaml file path
+- needRequestHook(boolean): if need to generate default request hook(useGetRequest and useMutationRequest)
+- needClient(boolean): if need to generate default request axios client
 
 #### 🤩 Run It!
 
@@ -110,6 +113,7 @@ fields meaning:
 4. Run `npm run codegen` then you can find output file in your output dir
 
 > if your swagger url need basic auth, just run `npm run codegen -- -a "Basic #basicAuthHeader"`
+> if you're running on windows, just run `npm run codegen -- -w`
 
 ### 👀 Example
 
@@ -134,6 +138,7 @@ and it's source is `swagger/opanAPI.json`, you can find more info in `ts-codegen
 how to use this file can be found in `src/APP.tsx`.
 
 ### 💁‍ Tip
+
 Wrapper functions in example folder like `useGetRequest` and `useMutationRequest` just one of the implementation.
 
 You can use your own wrapper functions and error types as well, just ensure your function name and error type are aligned with demo, since generated function will use these names.
@@ -143,6 +148,7 @@ You can use your own wrapper functions and error types as well, just ensure your
 Clone this repo, run `pnpm install` to install all dependencies.
 
 Copy this config file to your root dir:
+
 ```json
 {
   "output": "example/src/request",
@@ -167,6 +173,7 @@ Then run `pnpm run start` to generate request file to example folder, modify cod
 And there are some test cases in `__tests__` folder, you can run `pnpm run test` to see the results and help you modify the code.
 
 ## 🗂 Changelog
+
 [changelog](changelog.md)
 
 ## 🤗 Appreciation
