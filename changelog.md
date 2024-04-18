@@ -1,5 +1,9 @@
 # changelog
 
+## 2.0.0
+### fixes
+- adds windows support for resolving config file
+
 ## 1.2.2
 ### fixes
 - should only update variable from openAPI when it is an invalid variable name #16
