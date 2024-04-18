@@ -8,6 +8,10 @@
 
 </div>
 
+> This package is a fork from the original [SWR Request Generator](https://github.com/teobler/swr-request-generator) that adds windows support to config path resolving.
+
+---
+
 This tool can generate [SWR](https://swr.vercel.app/) request and related request params and response interface from swagger.
 
 Because SWR will support mutation request like POST/UPDATE... since [version 2.x](https://github.com/vercel/swr/discussions/1919).
@@ -43,19 +47,19 @@ And if anyone want to make it happen, it should be super cool 🥳
 ### 🛠 Install
 
 ```bash
-pnpm install -D @openapi-integration/swr-request-generator
+pnpm install -D @tech-priest-of-mars/swr-request-generator-win
 ```
 
 or
 
 ```bash
-yarn add -D @openapi-integration/swr-request-generator
+yarn add -D @tech-priest-of-mars/swr-request-generator-win
 ```
 
 or
 
 ```bash
-npm install -D @openapi-integration/swr-request-generator
+npm install -D @tech-priest-of-mars/swr-request-generator-win
 ```
 
 ### 🔧 Configuration
@@ -112,7 +116,7 @@ fields meaning:
 3. If you can only download the swagger json file, that's fine, just put the json file into your project and fill in your file path in the data field of the config file.
 4. Run `npm run codegen` then you can find output file in your output dir
 
-> if your swagger url need basic auth, just run `npm run codegen -- -a "Basic #basicAuthHeader"`
+> if your swagger url need basic auth, just run `npm run codegen -- -a "Basic #basicAuthHeader"` <br>
 > if you're running on windows, just run `npm run codegen -- -w`
 
 ### 👀 Example
